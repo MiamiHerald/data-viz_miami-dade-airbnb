@@ -1,0 +1,7 @@
+.map {
+  height: 500px;
+  @include media($medium-screen-up) {
+    height: 700px;
+  }
+  margin-bottom: 1rem;
+}

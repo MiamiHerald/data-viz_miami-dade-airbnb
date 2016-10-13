@@ -8,6 +8,23 @@
 
 {% block content %}
   <div class="container">
-    <h1>Hello World</h1>
+    <div class="row">
+      <h1>Map intro</h1>
+      <p>
+        Map description: lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet leo ac diam consequat, sed cursus magna tempus. Fusce nisl libero, volutpat id mi in, ultricies volutpat metus. Pellentesque at ex urna. Proin urna tortor, eleifend quis ornare eu, tempus sit amet nisl. Donec vitae egestas nunc.
+      </p>
+    </div>
+    <div class="row">
+      <div id="airbnb-map" class="js-map map" data-url="https://chrisdubya.carto.com/api/v2/viz/8ea72d4c-90b4-11e6-89ea-0e3ebc282e83/viz.json"></div>
+    </div>
+    <div class="row">
+      <p class="citations__source">
+        Sources: lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean laoreet leo ac diam consequat, sed cursus magna tempus.
+      </p>
+      <p class="citations__credit">CHRIS WILLIAMS cwilliams@miamiherald.com</p>
+    </div>
+    <div class="row">
+      <div class="citations__border"></div>
+    </div>
   </div>
 {% endblock %}

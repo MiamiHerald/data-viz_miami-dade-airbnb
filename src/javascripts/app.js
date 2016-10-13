@@ -1,2 +1,2 @@
-import { loadExample } from './modules/visualizations/example';
-loadExample();
+import { loadMap } from './modules/visualizations/map';
+loadMap();
