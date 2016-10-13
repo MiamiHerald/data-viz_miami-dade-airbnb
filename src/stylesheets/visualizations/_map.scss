@@ -1,7 +1,7 @@
 .map {
-  min-height: 300px;
-  // @include media($medium-screen-up) {
-  //   height: 700px;
-  // }
   margin-bottom: 1rem;
+
+  &__intro {
+    border-top: 2px dotted #CCC;
+  }
 }
