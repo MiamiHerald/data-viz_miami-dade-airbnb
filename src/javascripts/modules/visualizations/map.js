@@ -7,7 +7,7 @@ class Map {
   constructor(el, dataUrl) {
     this.el = el;
     this.dataUrl = dataUrl;
-    this.aspectRatio = 0.6667;
+    this.aspectRatio = 1;
     this.width = $(this.el).width();
     this.height = Math.ceil(this.aspectRatio * this.width);
   }
@@ -15,6 +15,10 @@ class Map {
   render() {
     this.mapSettings = this.loadSettings();
     this.drawMap();
+    $(window).on(`load`, () => {
+      this.pymChild = new pym.Child({ renderCallback: this.resizeMap.bind(this) });
+    });
+    $(window).on(`resize`, this.resizeMap.bind(this));
   }
 
   loadSettings() {
@@ -32,15 +36,12 @@ class Map {
     return this.settings;
   }
 
-  resizeChoropleth() {
+  resizeMap() {
     window.requestAnimationFrame(() => {
-      const chart = $(this.el).find(`g`);
-
       this.width = $(this.el).width();
       this.height = Math.ceil(this.aspectRatio * this.width);
 
-      TweenLite.set(chart, { scale: this.width / this.mapWidth });
-      d3.select(`.choropleth__svg`).attr(`height`, this.height);
+      $(this.el).height(this.height);
 
       if (this.pymChild) {
         this.pymChild.sendHeight();
