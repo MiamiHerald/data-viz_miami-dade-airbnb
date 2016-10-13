@@ -7,7 +7,7 @@ class Map {
   constructor(el, dataUrl) {
     this.el = el;
     this.dataUrl = dataUrl;
-    this.aspectRatio = 1;
+    this.aspectRatio = 0.6667;
     this.width = $(this.el).width();
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.lat = 25.748503;
