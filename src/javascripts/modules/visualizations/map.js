@@ -7,14 +7,18 @@ class Map {
   constructor(el, dataUrl) {
     this.el = el;
     this.dataUrl = dataUrl;
-    this.aspectRatio = 0.6667;
+    this.aspectRatio = 0.75;
     this.width = $(this.el).width();
     this.height = Math.ceil(this.aspectRatio * this.width);
     this.lat = 25.748503;
     this.lon = -80.286949;
-    this.zoom = 11;
-    this.mediumScreenUp = Modernizr.mq('(min-width: 700px)');
     this.pymChild = null;
+    this.mediumScreenUp = Modernizr.mq('(min-width: 700px)');
+    if (this.mediumScreenUp) {
+      this.zoom = 11;
+    } else {
+      this.zoom = 10;
+    }
   }
 
   render() {
@@ -31,10 +35,6 @@ class Map {
       this.height = Math.ceil(this.aspectRatio * this.width);
 
       $(this.el).height(this.height);
-
-      if (this.mediumScreenUp) {
-        this.zoom = 12;
-      }
 
       if (this.pymChild) {
         this.pymChild.sendHeight();
