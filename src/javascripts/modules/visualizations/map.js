@@ -58,8 +58,8 @@ class Map {
     })
     .done((vis, layers) => {
       layers[0].leafletMap.setMaxBounds([
-        [26.145629, -80.702302], // lat long top left
-        [25.188097, -80.062641]  // lat long bottom right
+        [26.074703, -80.780783], // lat long top left
+        [25.217123, -79.830560]  // lat long bottom right
       ])
     })
     .error((err) => {
