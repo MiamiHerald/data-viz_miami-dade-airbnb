@@ -24,9 +24,10 @@ class Map {
   render() {
     this.drawMap();
 
-    $(window).on(`load`, () => {
-      this.pymChild = new pym.Child({ renderCallback: this.resizeMap.bind(this) });
-    });
+    // $(window).on(`load`, () => {
+    //   this.pymChild = new pym.Child({ renderCallback: this.resizeMap.bind(this) });
+    // });
+    $(window).on(`load`, this.resizeMap.bind(this));
     $(window).on(`resize`, this.resizeMap.bind(this));
   }
 
