@@ -28,7 +28,6 @@ class Map {
       this.pymChild = new pym.Child({ renderCallback: this.resizeMap.bind(this) });
     });
     $(window).on(`resize`, this.resizeMap.bind(this));
-    $(window).trigger('resize');
   }
 
   resizeMap() {
